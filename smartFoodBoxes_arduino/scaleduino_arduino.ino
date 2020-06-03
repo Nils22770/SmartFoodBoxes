@@ -32,8 +32,8 @@ void setup() {
   Serial.println("HX711 Calibration");
   Serial.println("Remove all weight from scale");
   Serial.println("After readings begin, place known weight on scale");
-  Serial.println("Press a,s,d,f to increase calibration factor by 10,100,1000,10000 respectively");
-  Serial.println("Press z,x,c,v to decrease calibration factor by 10,100,1000,10000 respectively");
+  Serial.println("Press a,z,e to increase calibration factor by 10,100,1000 respectively");
+  Serial.println("Press q,s,f to decrease calibration factor by 10,100,1000 respectively");
   Serial.println("Press t for tare");
   scale.set_scale();
   scale.tare(); //Reset the scale to 0
@@ -83,20 +83,16 @@ void loop() {
     
     if(temp == '+' || temp == 'a')
       calibration_factor += 10;
-    else if(temp == '-' || temp == 'z')
+    else if(temp == '-' || temp == 'q')
       calibration_factor -= 10;
-    else if(temp == 's')
+    else if(temp == 'z')
       calibration_factor += 100;  
-    else if(temp == 'x')
+    else if(temp == 's')
       calibration_factor -= 100;  
-    else if(temp == 'd')
+    else if(temp == 'e')
       calibration_factor += 1000;  
-    else if(temp == 'c')
-      calibration_factor -= 1000;
-    else if(temp == 'f')
-      calibration_factor += 10000;  
-    else if(temp == 'v')
-      calibration_factor -= 10000;  
+    else if(temp == 'd')
+      calibration_factor -= 1000;  
     else if(temp == 't') {
       Serial.println("tared");
       scale.tare();  //Reset the scale to zero
