@@ -1,7 +1,3 @@
-/*
-circuits4you.com
-*/
-
 #include "HX711.h"
 #include <SoftwareSerial.h>
 #include "RunningAverage.h"
