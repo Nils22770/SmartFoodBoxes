@@ -13,7 +13,7 @@
  The HX711 board can be powered from 2.7V to 5V so the Arduino 5V power should be fine.
 */
 
-#include "HX711.h"  //You must have this library in your arduino library folder
+#include "HX711.h"
 #include <SoftwareSerial.h>
 #include "RunningAverage.h"
 
